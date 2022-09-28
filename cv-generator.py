@@ -55,7 +55,9 @@ while True:
         p = document.add_paragraph()
 
         company = input('Enter Company you have worked with ')
+        speak('The date of start? ')
         started_date = input('From Date ')
+        speak('The date of the end? ')
         ended_date = input('To Date ')
 
         p.add_run(company + ' ').bold = True
@@ -78,11 +80,12 @@ while True:
     has_more_skills = input('Do you have more skills? Yes or No? ')
     if has_more_skills.lower() == 'yes':
         skill = input('Enter your uniqe skills ')
-        p = document.add_paragraph()
+        p = document.add_paragraph(skill)
         p.style = 'List Bullet'
     else:
         break
 
+speak('Thanks for using this project, your CV is ready now')
 #Footer
 section = document.sections[0]
 footer = section.footer
